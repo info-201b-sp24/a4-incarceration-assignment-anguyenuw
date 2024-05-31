@@ -3,7 +3,7 @@ library(dplyr)
 library(vroom)
 both_rates_counties_1990 <- vroom("https://github.com/melaniewalsh/Neat-Datasets/blob/main/us-prison-jail-rates-1990.csv?raw=true")
 chart2_counties_discrepancies_race <- both_rates_counties_1990 %>%
-  # no prison population stats for years 2017 and 2018
+  # arbitrary choice of year
   filter(year == 2013) %>%
   # calculate discrepancies
   select(year, fips, state, county_name, total_pop,
